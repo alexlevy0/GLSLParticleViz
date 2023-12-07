@@ -17,6 +17,12 @@
   //   ]
   // },
   "compilerOptions": {
+    // "typeRoots": [
+    //   "node_modules/@types"
+    // ],
+    // "types": [
+    //   "three"
+    // ],
     "allowImportingTsExtensions": true,
     "baseUrl": ".",
     "paths": {
