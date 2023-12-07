@@ -8,12 +8,14 @@
     "prettier",
     "plugin:tailwindcss/recommended",
     "next/core-web-vitals",
+    "plugin:@next/next/recommended",
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:react/jsx-runtime",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/typescript",
     "plugin:prettier/recommended",
-    "plugin:react-hooks/recommended",
     "plugin:functional/external-vanilla-recommended",
     "plugin:functional/recommended",
     "plugin:functional/stylistic",
@@ -39,6 +41,7 @@
     "functional/no-expression-statements": "off",
     "functional/no-return-void": "off",
     "functional/immutable-data": ["error", { "ignoreNonConstDeclarations": true }],
-    "functional/prefer-immutable-types": "off"
+    "functional/prefer-immutable-types": "off",
+    "react/prop-types": "off"
   }
 }

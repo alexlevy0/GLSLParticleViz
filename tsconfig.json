@@ -42,6 +42,7 @@
         "name": "next"
       }
     ],
+    "importHelpers": true,
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -52,12 +53,14 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "isolatedModules": true,
+    "checkJs": true,
     "jsx": "preserve",
     "resolveJsonModule": true
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
+    "app/**/*.tsx",
     "**/*.tsx",
     "next.config.js",
     ".next/types/**/*.ts"

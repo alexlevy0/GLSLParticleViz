@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
           pointerEvents: 'none',
         }}
         eventSource={ref}
-        eventPrefix='client'
+        eventPrefix="client"
       />
     </div>
   )
