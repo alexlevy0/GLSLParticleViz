@@ -1,5 +1,6 @@
 import { Layout } from '@/components/dom/Layout'
 import '@/global.css'
+import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export const metadata = {
@@ -22,6 +23,7 @@ export default function RootLayout({ children }): React.JSX.Element {
         {/* To avoid FOUT with styled-components wrap Layout with StyledComponentsRegistry https://beta.nextjs.org/docs/styling/css-in-js#styled-components */}
         <Layout>{children}</Layout>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   )
