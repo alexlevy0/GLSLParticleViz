@@ -8,7 +8,7 @@
   "scripts": {
     "lint": "next lint --fix --dir app",
     "lint:src": "next lint --fix --dir src",
-    "eslint:fix": "eslint --ext .tsx,.ts .",
+    "eslint:fix": "eslint --fix --ext .tsx,.ts .",
     "eslint:dry": "eslint --fix-dry-run --ext .tsx,.ts .",
     "dev": "next dev",
     "dev:turbo": "next dev --turbo",

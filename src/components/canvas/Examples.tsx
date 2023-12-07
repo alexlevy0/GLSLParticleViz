@@ -1,11 +1,10 @@
+/* eslint-disable react/no-unknown-property */
 'use client'
 
-import { useGLTF } from '@react-three/drei'
+import { MeshDistortMaterial, useCursor, useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import * as THREE from 'three'
-import { useMemo, useRef, useState } from 'react'
-import { Line, useCursor, MeshDistortMaterial } from '@react-three/drei'
 import { useRouter } from 'next/navigation'
+import { useRef, useState } from 'react'
 
 export const Blob = ({ route = '/', ...props }) => {
   const router = useRouter()
@@ -32,10 +31,10 @@ export const Logo = ({ route = '/blob', ...props }) => {
   const router = useRouter()
 
   const [hovered, hover] = useState(false)
-  const points = useMemo(
-    () => new THREE.EllipseCurve(0, 0, 3, 1.15, 0, 2 * Math.PI, false, 0).getPoints(100),
-    [],
-  )
+  // const points = useMemo(
+  //   () => new THREE.EllipseCurve(0, 0, 3, 1.15, 0, 2 * Math.PI, false, 0).getPoints(100),
+  //   [],
+  // )
 
   useCursor(hovered)
   useFrame((state, delta) => {
@@ -51,16 +50,13 @@ export const Logo = ({ route = '/blob', ...props }) => {
       ref={mesh}
       {...props}
     >
-      {/* @ts-ignore */}
       {/* <Line
         worldUnits
         points={points}
         color="#1fb2f5"
         lineWidth={0.15}
       /> */}
-      {/* @ts-ignore */}
       {/* <Line worldUnits points={points} color='#1fb2f5' lineWidth={0.15} rotation={[0, 0, 1]} /> */}
-      {/* @ts-ignore */}
       {/* <Line worldUnits points={points} color='#1fb2f5' lineWidth={0.15} rotation={[0, 0, -1]} /> */}
       <mesh
         onClick={() => router.push(route)}

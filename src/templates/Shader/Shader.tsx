@@ -1,10 +1,11 @@
+/* eslint-disable react/no-unknown-property */
 // @ts-nocheck
-import * as THREE from 'three'
-import { extend, useFrame } from '@react-three/fiber'
 import { shaderMaterial } from '@react-three/drei'
-import vertex from './glsl/shader.vert'
-import fragment from './glsl/shader.frag'
+import { extend, useFrame } from '@react-three/fiber'
 import { forwardRef, useImperativeHandle, useRef } from 'react'
+import * as THREE from 'three'
+import fragment from './glsl/shader.frag'
+import vertex from './glsl/shader.vert'
 
 const ShaderImpl = shaderMaterial(
   {
@@ -18,7 +19,7 @@ const ShaderImpl = shaderMaterial(
 extend({ ShaderImpl })
 
 // eslint-disable-next-line react/display-name
-const Shader = forwardRef(({ children, ...props }, ref) => {
+const Shader = forwardRef(({ ...props }, ref) => {
   const localRef = useRef()
 
   useImperativeHandle(ref, () => localRef.current)
