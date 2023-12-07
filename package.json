@@ -14,16 +14,19 @@
     "start": "next start",
     "prettier": "npx prettier --list-different \"./src/**/*.{ts,tsx,md}\" \"./app/**/*.{ts,tsx,md}\"\""
   },
+  "dependencies-": {
+    "next": "14.0.1"
+  },
   "dependencies": {
     "@ducanh2912/next-pwa": "^9.4.0",
     "@react-three/drei": "^9.80.2",
     "@react-three/fiber": "^8.13.6",
     "glsl-random": "^0.0.5",
-    "next": "^13.4.13",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
     "react-scripts": "^3.0.1",
-    "three": "^0.154.0",
+    "three": "^0.159.0",
     "three-stdlib": "^2.24.2",
     "tunnel-rat": "^0.1.2"
   },
@@ -38,7 +41,7 @@
     "@typescript-eslint/parser": "^6.13.1",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.47.0",
-    "eslint-config-next": "^13.4.13",
+    "eslint-config-next": "latest",
     "eslint-config-prettier": "^8.10.0",
     "eslint-config-standard-with-typescript": "^40.0.0",
     "eslint-plugin-functional": "^6.0.0",
