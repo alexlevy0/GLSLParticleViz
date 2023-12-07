@@ -1,13 +1,21 @@
 {
-  "name": "react-three-next",
-  "version": "2.0.0",
+  "name": "glsl-particle-viz",
+  "version": "0.0.1",
   "authors": [
-    "Renaud ROHLINGER <https://twitter.com/onirenaud>"
+    "Alex Lévy"
   ],
   "license": "MIT",
-  "private": true,
   "engines": {
     "node": ">=14"
+  },
+  "scripts": {
+    "lint": "next lint --fix --dir app",
+    "dev": "next dev",
+    "dev:turbo": "next dev --turbo",
+    "build": "next build",
+    "analyze": "ANALYZE=true next build",
+    "start": "next start",
+    "prettier": "npx prettier --list-different \"./src/**/*.{ts,tsx,md}\" \"./app/**/*.{ts,tsx,md}\"\""
   },
   "dependencies": {
     "@ducanh2912/next-pwa": "^9.4.0",
@@ -17,19 +25,35 @@
     "next": "^13.4.13",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-scripts": "^3.0.1",
     "three": "^0.154.0",
     "three-stdlib": "^2.24.2",
     "tunnel-rat": "^0.1.2"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.10",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@jest/globals": "^29.7.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
     "@next/bundle-analyzer": "^13.4.13",
-    "@types/node": "^20.10.4",
-    "@types/react": "^18.2.42",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.47.0",
     "eslint-config-next": "^13.4.13",
     "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-tailwindcss": "^3.13.0",
+    "eslint-config-standard-with-typescript": "^40.0.0",
+    "eslint-plugin-functional": "^6.0.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-n": "^16.3.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-unicorn": "^49.0.0",
     "file-loader": "^6.2.0",
     "glslify": "^7.1.1",
     "glslify-loader": "^2.0.0",
@@ -39,13 +63,5 @@
     "tailwindcss": "^3.3.3",
     "typescript": "^5.3.3",
     "url-loader": "^4.1.1"
-  },
-  "scripts": {
-    "lint": "next lint --fix --dir app",
-    "dev": "next dev",
-    "build": "next build",
-    "analyze": "ANALYZE=true next build",
-    "start": "next start",
-    "prettier": "npx prettier --list-different \"./src/**/*.{ts,tsx,md}\" \"./app/**/*.{ts,tsx,md}\"\""
   }
 }

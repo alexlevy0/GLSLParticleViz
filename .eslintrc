@@ -1,9 +1,44 @@
 {
-  "extends": ["next", "prettier", "plugin:tailwindcss/recommended"],
+  "env": {
+    "browser": true,
+    "es2024": true
+  },
+  "extends": [
+    "next",
+    "prettier",
+    "plugin:tailwindcss/recommended",
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:functional/external-vanilla-recommended",
+    "plugin:functional/recommended",
+    "plugin:functional/stylistic",
+    "plugin:promise/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "project": "./tsconfig.json",
+    "sourceType": "module"
+  },
+  "plugins": ["promise", "functional", "unicorn", "@typescript-eslint", "react", "prettier"],
   "rules": {
     "import/prefer-default-export": "off",
     "no-console": "warn",
     "no-var": "error",
-    "no-html-link-for-pages": "off"
+    "no-html-link-for-pages": "off",
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"],
+    "functional/functional-parameters": "off",
+    "functional/no-expression-statements": "off",
+    "functional/no-return-void": "off",
+    "functional/immutable-data": ["error", { "ignoreNonConstDeclarations": true }],
+    "functional/prefer-immutable-types": "off"
   }
 }

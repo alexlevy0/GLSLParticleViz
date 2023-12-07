@@ -1,3 +1,5 @@
+/* eslint-disable functional/no-conditional-statements */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -16,12 +18,12 @@ const nextConfig = {
   // compiler: {
   //   styledComponents: true,
   // },
+  // experimental: {},
   reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
-  experimental: {
-    reactRoot: 'concurrent',
-    appDir: true,
+  swcMinify: true,
+  images: {
+    unoptimized: true,
   },
-  images: {},
   webpack(config, { isServer }) {
     if (!isServer) {
       // We're in the browser build, so we can safely exclude the sharp module
@@ -57,7 +59,15 @@ const nextConfig = {
   },
 }
 
-const KEYS_TO_OMIT = ['webpackDevMiddleware', 'configOrigin', 'target', 'analyticsId', 'webpack5', 'amp', 'assetPrefix']
+const KEYS_TO_OMIT = [
+  'webpackDevMiddleware',
+  'configOrigin',
+  'target',
+  'analyticsId',
+  'webpack5',
+  'amp',
+  'assetPrefix',
+]
 
 module.exports = (_phase, { defaultConfig }) => {
   const plugins = [[withPWA], [withBundleAnalyzer, {}]]
@@ -68,8 +78,9 @@ module.exports = (_phase, { defaultConfig }) => {
   })
 
   const finalConfig = {}
-  Object.keys(wConfig).forEach((key) => {
+  Object.keys(wConfig).forEach(key => {
     if (!KEYS_TO_OMIT.includes(key)) {
+      // eslint-disable-next-line functional/immutable-data
       finalConfig[key] = wConfig[key]
     }
   })

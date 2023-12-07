@@ -3,5 +3,5 @@ dist/*
 public/*
 .next/*
 node_modules/*
-package.json
+# package.json
 *.log
