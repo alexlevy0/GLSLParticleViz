@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 'use client'
 
 import dynamic from 'next/dynamic'
@@ -40,7 +42,6 @@ const Common = dynamic(
     ssr: false,
   },
 )
-
 export default function Page() {
   return (
     <>
@@ -53,7 +54,6 @@ export default function Page() {
           </p>
         </div>
       </div>
-
       <View className="absolute top-0 flex h-screen w-full flex-col items-center justify-center">
         <Blob />
         <Common color={undefined} />

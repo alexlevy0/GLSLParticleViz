@@ -20,21 +20,17 @@ const nextConfig = {
   // },
   // experimental: {},
   reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
-  // swcMinify: true,
+  swcMinify: true,
   images: {
     unoptimized: true,
   },
   typescript: {
-    // !! WARN !!
-    // Dangerously allow production builds to successfully complete even if
-    // your project has type errors.
-    // !! WARN !!
-    ignoreBuildErrors: true,
+    // ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
     ignoreDuringBuilds: true,
+    // ignoreDuringBuilds: false,
   },
   webpack(config, { isServer }) {
     if (!isServer) {
@@ -84,6 +80,7 @@ const KEYS_TO_OMIT = [
 module.exports = (_phase, { defaultConfig }) => {
   const plugins = [[withPWA], [withBundleAnalyzer, {}]]
 
+  // @ts-ignore
   const wConfig = plugins.reduce((acc, [plugin, config]) => plugin({ ...acc, ...config }), {
     ...defaultConfig,
     ...nextConfig,

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useFrame, useThree } from '@react-three/fiber'
 import { useEffect, useMemo } from 'react'
 import * as THREE from 'three'
@@ -96,6 +97,7 @@ const usePostProcess = () => {
     gl.render(scene, camera)
 
     gl.setRenderTarget(null)
+    // eslint-disable-next-line functional/no-conditional-statements
     if (screen) screen.material.uniforms.time.value += delta
 
     gl.render(screenScene, screenCamera)

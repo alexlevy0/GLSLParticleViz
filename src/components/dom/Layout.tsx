@@ -1,8 +1,9 @@
 'use client'
 
-import { useRef } from 'react'
 import dynamic from 'next/dynamic'
-const Scene = dynamic(() => import('@/components/canvas/Scene'), { ssr: false })
+import { useRef } from 'react'
+// @ts-ignore
+const Scene = dynamic(() => import('../../../src/components/canvas/Scene.tsx'), { ssr: false })
 
 const Layout = ({ children }) => {
   const ref = useRef()
